@@ -1,0 +1,81 @@
+package com.ecommerce.order.service;
+
+
+import com.ecommerce.order.dto.CartItemRequest;
+import com.ecommerce.order.entity.CartItem;
+import com.ecommerce.order.repository.CartItemRepository;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.User;
+import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
+@Transactional
+public class CartService {
+
+    private final CartItemRepository cartItemRepository;
+
+
+    public boolean addToCart(String userID, CartItemRequest request) {
+
+//        Optional<Product> productOpt = productRepository.findById(request.getProductId());
+//        if(productOpt.isEmpty())
+//            return false;
+//
+//        Product product = productOpt.get();
+//        if (product.getStockQuantity()< request.getQuantity())
+//            return false;
+//        Optional<User> userOpt = userRepository.findById(Long.valueOf(userID));
+//        if(userOpt.isEmpty())
+//            return false;
+//        User user = userOpt.get();
+
+       CartItem exsistingCartItem = cartItemRepository.findByUserIdAndProductId(userID, request.getProductId());
+       if(exsistingCartItem != null){
+           exsistingCartItem.setQuantity(exsistingCartItem.getQuantity()+ request.getQuantity());
+           exsistingCartItem.setPrice(BigDecimal.valueOf(1000.00));
+           cartItemRepository.save(exsistingCartItem);
+       }else {
+
+           CartItem cartItem = new CartItem();
+           cartItem.setProductId(request.getProductId());
+           cartItem.setUserId(userID);
+           cartItem.setQuantity(request.getQuantity());
+           cartItem.setPrice(BigDecimal.valueOf(1000.00));
+           cartItemRepository.save(cartItem);
+       }
+       return true;
+    }
+
+    public boolean deleteItemFromCart(String userId, String productId) {
+
+        CartItem cartItem =cartItemRepository.findByUserIdAndProductId(userId,productId);
+
+        if(cartItem !=null){
+            cartItemRepository.delete(cartItem);
+                log.info("Successfully deleted product {} from user {}'s cart", productId, userId);
+                return true;
+        }
+
+        log.warn("Entities exist, but no matching CartItem found for UserId: {} and ProductId: {}", userId, productId);
+        return false;
+    }
+
+
+    public List<CartItem> getCart(String userId) {
+        log.debug("Fetching cart for user: {}", userId);
+        return cartItemRepository.findByUserId(userId);
+    }
+
+    public void clearCart(String userId) {
+       cartItemRepository.deleteByUserId(userId);
+
+    }
+}
