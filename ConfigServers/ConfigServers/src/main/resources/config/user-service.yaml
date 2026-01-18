@@ -4,8 +4,9 @@ server:
 spring:
 #  application:
 ##    name: user-service
+
   mongodb:
-      uri: mongodb://localhost:27017/ecom_user
+      uri: ${MONGO_URI}
       database: ecom_user
 
 
