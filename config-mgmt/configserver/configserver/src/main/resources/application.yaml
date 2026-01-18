@@ -1,0 +1,51 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: configserver
+#  cloud:
+#    config:
+#      server:
+#        git:
+#           uri: https://github.com/ChirayuP19/app-configuration
+#           username: ${GIT_USERNAME}
+#           password: ${GIT_TOKEN}
+
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///C:\Users\chira\Desktop\JAVA\Microservices Projects\user-workspace\config-mgmt\configserver\configserver\src\main\resources\config
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/configdb
+#    username: ${DB_USER}
+#    password: ${DB_PASSWORD}
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  cloud:
+#    config:
+#      server:
+#        jdbc:
+#          sql: SELECT prop_key, prop_value from properties WHERE application=? and profile=? and label=?
+#          default-label: main
+#encrypt:
+#  key: "0E329232EA6D0D78FD5F4VC5"
+
+encrypt:
+  key-store:
+    location: 'classpath:config-server.jks'
+    password: mypass
+    alias: config-server-key

@@ -1,0 +1,21 @@
+server:
+  port: 1010
+
+spring:
+  application:
+    name: configdemo
+  config:
+    import: optional:configserver:http://localhost:8888
+  profiles:
+    active: dev
+management:
+    endpoints:
+      web:
+        exposure:
+          include: refresh, env, health, info
+
+build:
+  id: ${ID:101}
+  version: ${VERSION:1.0.0}
+  name: ${NAME:Default Build}
+

@@ -6,22 +6,17 @@ spring:
     name: product-service
 
   datasource:
-    url: jdbc:mysql://localhost:3307/chirayu
+    url: jdbc:postgresql://localhost:5433/product
     username: chirayu
-    password: Chirayu@1911
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: chirayu
+    driver-class-name: org.postgresql.Driver
   jpa:
-    database: MYSQL
+    database: POSTGRESQL
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        dialect-platform: org.hibernate.dialect.MySQLDialect # Add this here
-
-
-
-
-
+        dialect-platform: org.hibernate.dialect.POSTGRESQLDialect # Add this here
 
 #  datasource:
 #    url: jdbc:h2:file:C:/Users/chira/test;AUTO_SERVER=TRUE # in-memory default DB

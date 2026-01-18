@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,6 +22,9 @@ public interface CartItemRepository extends JpaRepository<CartItem,Long> {
 
     List<CartItem> findByUserId(String userId);
 
-    void deleteByUserId(String userId);
+    @Modifying
+    @Transactional
+    @Query("DELETE FROM CartItem c WHERE c.userId = :userId")
+    void deleteByUserId(@Param("userId")String userId);
 }
     
