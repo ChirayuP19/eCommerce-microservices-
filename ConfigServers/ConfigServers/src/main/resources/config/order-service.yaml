@@ -9,6 +9,11 @@ spring:
     username: ${DB_USER}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   jpa:
     database: POSTGRESQL
     hibernate:
@@ -16,7 +21,11 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect # Add this here
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 #  datasource:
 #    url: jdbc:h2:file:C:/Users/chira/test;AUTO_SERVER=TRUE # in-memory default DB
 #    driver-class-name: org.h2.Driver

@@ -6,8 +6,19 @@ spring:
     name: ConfigServers
   profiles:
     active: native
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     config:
       server:
         native:
-          search-locations: classpath:/config
+          search-locations: file:///C:\Users\chira\Desktop\JAVA\Microservices Projects\user-workspace\ConfigServers\ConfigServers\src\main\resources\config
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

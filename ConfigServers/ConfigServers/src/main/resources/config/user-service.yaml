@@ -4,11 +4,20 @@ server:
 spring:
 #  application:
 ##    name: user-service
-
   mongodb:
       uri: ${MONGO_URI}
       database: ecom_user
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 
 
