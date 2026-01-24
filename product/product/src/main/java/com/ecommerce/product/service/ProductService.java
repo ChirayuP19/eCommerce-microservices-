@@ -7,11 +7,13 @@ import com.ecommerce.product.entity.Product;
 import com.ecommerce.product.mapper.ProductMapper;
 import com.ecommerce.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.jspecify.annotations.Nullable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -60,6 +62,11 @@ public class ProductService {
                .stream()
                .map(productMapper::mapToProductResponse)
                .collect(Collectors.toList());
+    }
+
+    public Optional<ProductResponse> getProductById(String id) {
+        return productRepository.findByIdAndActiveTrue(Long.valueOf(id))
+                .map(productMapper::mapToProductResponse);
     }
 
 //    private ProductResponse mapToProductResponse(Product saveProduct) {

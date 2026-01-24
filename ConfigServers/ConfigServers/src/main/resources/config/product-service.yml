@@ -37,3 +37,10 @@ management:
 #        enabled: true               # enable H2 web console
 #        path: /h2-console           # access at http://localhost:8080/h2-console
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
