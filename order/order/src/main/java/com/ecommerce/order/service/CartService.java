@@ -2,8 +2,10 @@ package com.ecommerce.order.service;
 
 
 import com.ecommerce.order.client.ProductServiceClient;
+import com.ecommerce.order.client.UserServiceClient;
 import com.ecommerce.order.dto.CartItemRequest;
 import com.ecommerce.order.dto.ProductResponse;
+import com.ecommerce.order.dto.UserResponse;
 import com.ecommerce.order.entity.CartItem;
 import com.ecommerce.order.repository.CartItemRepository;
 import jakarta.transaction.Transactional;
@@ -24,6 +26,7 @@ public class CartService {
 
     private final CartItemRepository cartItemRepository;
     private final ProductServiceClient productServiceClient;
+    private final UserServiceClient userServiceClient;
 
 
     public boolean addToCart(String userID, CartItemRequest request) {
@@ -32,12 +35,11 @@ public class CartService {
         if(productResponse == null || productResponse.getStockQuantity()< request.getQuantity())
             return false;
 
-//        Optional<User> userOpt = userRepository.findById(Long.valueOf(userID));
-//        if(userOpt.isEmpty())
-//            return false;
-//        User user = userOpt.get();
+        UserResponse userResponse = userServiceClient.getUserDetails(userID);
+        if(userResponse==null)
+            return false;
 
-       CartItem exsistingCartItem = cartItemRepository.findByUserIdAndProductId(userID, request.getProductId());
+        CartItem exsistingCartItem = cartItemRepository.findByUserIdAndProductId(userID, request.getProductId());
        if(exsistingCartItem != null){
            exsistingCartItem.setQuantity(exsistingCartItem.getQuantity()+ request.getQuantity());
            exsistingCartItem.setPrice(BigDecimal.valueOf(1000.00));
