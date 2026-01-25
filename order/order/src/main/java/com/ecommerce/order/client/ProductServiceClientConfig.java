@@ -1,0 +1,35 @@
+package com.ecommerce.order.client;
+
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.web.client.RestClient;
+import org.springframework.web.client.support.RestClientAdapter;
+import org.springframework.web.service.invoker.HttpServiceProxyFactory;
+
+import java.util.Optional;
+
+@Configuration
+public class ProductServiceClientConfig {
+
+//  @LoadBalanced this is cant in use bcz i need t0 hardcore it bcz of version issue
+    @Bean
+    public RestClient.Builder restClientBuilder(){
+        return RestClient.builder();
+    }
+
+    @Bean
+    public ProductServiceClient restClientInterface(@Lazy RestClient.Builder restClientBuilder){
+        RestClient restClient = restClientBuilder.baseUrl("http://localhost:8081")
+                .defaultStatusHandler(HttpStatusCode::is4xxClientError,((request, response) -> Optional.empty()))
+                .build();
+        RestClientAdapter adapter = RestClientAdapter
+                .create(restClient);
+        HttpServiceProxyFactory factory = HttpServiceProxyFactory
+                .builderFor(adapter)
+                .build();
+        return factory.createClient(ProductServiceClient.class);
+    }
+}
