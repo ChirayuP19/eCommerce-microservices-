@@ -1,526 +1,276 @@
-2026-01-25T09:45:28.243-05:00  INFO 24108 --- [user-service] [main] c.e.u.UserWorkspaceApplication           : Starting UserWorkspaceApplication using Java 25 with PID 24108 (C:\Users\chira\Desktop\JAVA\Microservices Projects\user-workspace\user-workspace\target\classes started by chira in C:\Users\chira\Desktop\JAVA\Microservices Projects\user-workspace)
-2026-01-25T09:45:28.250-05:00  INFO 24108 --- [user-service] [main] c.e.u.UserWorkspaceApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-01-25T09:45:28.350-05:00  INFO 24108 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
-2026-01-25T09:45:28.351-05:00  INFO 24108 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
-2026-01-25T09:45:30.178-05:00  INFO 24108 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-01-25T09:45:30.180-05:00  INFO 24108 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-01-25T09:45:30.233-05:00  INFO 24108 --- [user-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.ecommerce.user_workspace.repository.UserRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
-2026-01-25T09:45:30.234-05:00  INFO 24108 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 0 JPA repository interfaces.
-2026-01-25T09:45:30.279-05:00  INFO 24108 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-01-25T09:45:30.280-05:00  INFO 24108 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2026-01-25T09:45:30.464-05:00  INFO 24108 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 183 ms. Found 1 MongoDB repository interface.
-2026-01-25T09:45:31.108-05:00  INFO 24108 --- [user-service] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2026-01-25T09:45:31.118-05:00  INFO 24108 --- [user-service] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2026-01-25T09:45:31.156-05:00  INFO 24108 --- [user-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d539e5a0-8fb8-3446-94dd-c4d4adfe2c87
-2026-01-25T09:45:32.109-05:00  INFO 24108 --- [user-service] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
-2026-01-25T09:45:32.128-05:00  INFO 24108 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-01-25T09:45:32.129-05:00  INFO 24108 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-01-25T09:45:32.197-05:00  INFO 24108 --- [user-service] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3840 ms
-2026-01-25T09:45:32.618-05:00  INFO 24108 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-01-25T09:45:32.908-05:00  INFO 24108 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:4cf6f827-cfc7-4fe5-9cd6-80e2e0a92932 user=SA
-2026-01-25T09:45:32.910-05:00  INFO 24108 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-01-25T09:45:32.986-05:00  INFO 24108 --- [user-service] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-01-25T09:45:33.117-05:00  INFO 24108 --- [user-service] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.0.Final
-2026-01-25T09:45:33.899-05:00  INFO 24108 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-01-25T09:45:34.097-05:00  INFO 24108 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:h2:mem:4cf6f827-cfc7-4fe5-9cd6-80e2e0a92932]
+2026-01-26T00:04:57.547-05:00  INFO 12536 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T00:16:27.886-05:00  WARN 12536 --- [user-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m52s618ms785µs300ns).
+2026-01-26T00:16:33.778-05:00  INFO 12536 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T00:21:33.850-05:00  INFO 12536 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T00:26:33.970-05:00  INFO 12536 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T00:31:34.294-05:00  INFO 12536 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T00:34:48.927-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USER-SERVICE with eureka with status DOWN
+2026-01-26T00:34:48.963-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1769405688961, current=DOWN, previous=UP]
+2026-01-26T00:34:48.965-05:00  INFO 12536 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082: registering service...
+2026-01-26T00:34:49.464-05:00  INFO 12536 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - registration status: 204
+2026-01-26T00:34:49.663-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T00:34:49.836-05:00  INFO 12536 --- [user-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T00:34:50.179-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2026-01-26T00:34:50.181-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2026-01-26T00:34:50.203-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.VpAfL4QoRmu8eDKHZUZQhA'
+2026-01-26T00:34:50.275-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'user-service.rabbit-1163396531.springCloudBusInput.errors' has 1 subscriber(s).
+2026-01-26T00:34:50.288-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'user-service.rabbit-1163396531.springCloudBusInput.errors' has 0 subscriber(s).
+2026-01-26T00:34:51.652-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-01-26T00:34:51.652-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'user-service.errorChannel' has 0 subscriber(s).
+2026-01-26T00:34:51.654-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2026-01-26T00:34:52.191-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-26T00:34:52.435-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-26T00:34:52.470-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-26T00:34:52.482-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-01-26T00:34:55.490-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-01-26T00:34:55.537-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - deregister  status: 200
+2026-01-26T00:34:55.539-05:00  INFO 12536 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-01-26T00:35:12.822-05:00  INFO 4372 --- [user-service] [main] [                                                 ] c.e.u.UserWorkspaceApplication           : Starting UserWorkspaceApplication using Java 25 with PID 4372 (C:\Users\chira\Desktop\JAVA\Microservices Projects\user-workspace\user-workspace\target\classes started by chira in C:\Users\chira\Desktop\JAVA\Microservices Projects\user-workspace)
+2026-01-26T00:35:12.863-05:00  INFO 4372 --- [user-service] [main] [                                                 ] c.e.u.UserWorkspaceApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T00:35:13.235-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2026-01-26T00:35:13.237-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
+2026-01-26T00:35:19.928-05:00  INFO 4372 --- [user-service] [main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-01-26T00:35:19.935-05:00  INFO 4372 --- [user-service] [main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-26T00:35:20.184-05:00  INFO 4372 --- [user-service] [main] [                                                 ] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.ecommerce.user_workspace.repository.UserRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2026-01-26T00:35:20.190-05:00  INFO 4372 --- [user-service] [main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 189 ms. Found 0 JPA repository interfaces.
+2026-01-26T00:35:20.417-05:00  INFO 4372 --- [user-service] [main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-01-26T00:35:20.418-05:00  INFO 4372 --- [user-service] [main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-01-26T00:35:21.158-05:00  INFO 4372 --- [user-service] [main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 724 ms. Found 1 MongoDB repository interface.
+2026-01-26T00:35:25.386-05:00  INFO 4372 --- [user-service] [main] [                                                 ] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-01-26T00:35:25.444-05:00  INFO 4372 --- [user-service] [main] [                                                 ] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-01-26T00:35:25.775-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.cloud.context.scope.GenericScope     : BeanFactory id=71b495d3-8295-395d-ae51-5531fd7d8494
+2026-01-26T00:35:34.090-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-01-26T00:35:34.704-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T00:35:34.717-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T00:35:35.349-05:00  INFO 4372 --- [user-service] [main] [                                                 ] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 22096 ms
+2026-01-26T00:35:40.564-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-26T00:35:41.822-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:cac2480a-c517-4c29-964e-1d28f001446b user=SA
+2026-01-26T00:35:41.843-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-26T00:35:42.352-05:00  INFO 4372 --- [user-service] [main] [                                                 ] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-01-26T00:35:43.073-05:00  INFO 4372 --- [user-service] [main] [                                                 ] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.0.Final
+2026-01-26T00:35:46.596-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-26T00:35:47.419-05:00  INFO 4372 --- [user-service] [main] [                                                 ] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:cac2480a-c517-4c29-964e-1d28f001446b]
 	Database driver: H2 JDBC Driver
 	Database dialect: H2Dialect
 	Database version: 2.4.240
-	Default catalog/schema: 4CF6F827-CFC7-4FE5-9CD6-80E2E0A92932/PUBLIC
+	Default catalog/schema: CAC2480A-C517-4C29-964E-1D28F001446B/PUBLIC
 	Autocommit mode: undefined/unknown
 	Isolation level: READ_COMMITTED [default READ_COMMITTED]
 	JDBC fetch size: 100
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-01-25T09:45:34.664-05:00  INFO 24108 --- [user-service] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-01-25T09:45:34.676-05:00  INFO 24108 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-01-25T09:45:35.029-05:00  INFO 24108 --- [user-service] [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.2"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/25+37-LTS-3491"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@38e1442a], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@5f3fa154, com.mongodb.Jep395RecordCodecProvider@6193340e, com.mongodb.KotlinCodecProvider@3bced0d2, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@1db4ea47], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
-2026-01-25T09:45:35.061-05:00  INFO 24108 --- [user-service] [cluster-ClusterId{value='69762c8e3af9f26e950aecef', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=27, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=36437700, minRoundTripTimeNanos=0}
-2026-01-25T09:45:36.211-05:00  WARN 24108 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-01-25T09:45:36.816-05:00  INFO 24108 --- [user-service] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'user-service.springCloudBusInput' has 1 subscriber(s).
-2026-01-25T09:45:37.793-05:00  INFO 24108 --- [user-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
-2026-01-25T09:45:37.855-05:00  WARN 24108 --- [user-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-01-25T09:45:37.862-05:00  INFO 24108 --- [user-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 24 endpoints beneath base path '/actuator'
-2026-01-25T09:45:37.964-05:00  INFO 24108 --- [user-service] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-01-25T09:45:37.965-05:00  INFO 24108 --- [user-service] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'user-service.errorChannel' has 1 subscriber(s).
-2026-01-25T09:45:37.965-05:00  INFO 24108 --- [user-service] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
-2026-01-25T09:45:37.994-05:00  INFO 24108 --- [user-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-01-25T09:45:38.022-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-01-25T09:45:38.025-05:00  INFO 24108 --- [user-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-25T09:45:38.039-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-01-25T09:45:38.040-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-01-25T09:45:38.040-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-01-25T09:45:38.040-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-01-25T09:45:38.040-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-01-25T09:45:38.040-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-01-25T09:45:38.040-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-01-25T09:45:38.282-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-01-25T09:45:38.284-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-01-25T09:45:38.286-05:00  INFO 24108 --- [user-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-01-25T09:45:38.286-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1769352338286 with initial instances count: 2
-2026-01-25T09:45:38.290-05:00  INFO 24108 --- [user-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-SERVICE with eureka with status UP
-2026-01-25T09:45:38.291-05:00  INFO 24108 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1769352338291, current=UP, previous=STARTING]
-2026-01-25T09:45:38.292-05:00  INFO 24108 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082: registering service...
-2026-01-25T09:45:38.292-05:00  INFO 24108 --- [user-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
-2026-01-25T09:45:38.292-05:00  INFO 24108 --- [user-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
-2026-01-25T09:45:38.356-05:00  INFO 24108 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - registration status: 204
-2026-01-25T09:45:38.409-05:00  INFO 24108 --- [user-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
-2026-01-25T09:45:38.419-05:00  INFO 24108 --- [user-service] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.VXilFku6RhWqlcMMHWAT_Q, bound to: springCloudBus
-2026-01-25T09:45:38.422-05:00  INFO 24108 --- [user-service] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2026-01-25T09:45:38.484-05:00  INFO 24108 --- [user-service] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#222abb8f:0/SimpleConnection@4ba6b5eb [delegate=amqp://guest@127.0.0.1:5672/, localPort=57420]
-2026-01-25T09:45:38.543-05:00  INFO 24108 --- [user-service] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1695983081.springCloudBusInput.errors' has 1 subscriber(s).
-2026-01-25T09:45:38.544-05:00  INFO 24108 --- [user-service] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1695983081.springCloudBusInput.errors' has 2 subscriber(s).
-2026-01-25T09:45:38.572-05:00  INFO 24108 --- [user-service] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.VXilFku6RhWqlcMMHWAT_Q'
-2026-01-25T09:45:38.603-05:00  INFO 24108 --- [user-service] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
-2026-01-25T09:45:38.605-05:00  INFO 24108 --- [user-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2026-01-25T09:45:38.643-05:00  INFO 24108 --- [user-service] [main] c.e.u.UserWorkspaceApplication           : Started UserWorkspaceApplication in 11.77 seconds (process running for 13.666)
-2026-01-25T09:49:01.426-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USER-SERVICE with eureka with status DOWN
-2026-01-25T09:49:01.430-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1769352541430, current=DOWN, previous=UP]
-2026-01-25T09:49:01.431-05:00  INFO 24108 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082: registering service...
-2026-01-25T09:49:01.445-05:00  INFO 24108 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - registration status: 204
-2026-01-25T09:49:01.473-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-01-25T09:49:01.489-05:00  INFO 24108 --- [user-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-01-25T09:49:01.535-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
-2026-01-25T09:49:01.744-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
-2026-01-25T09:49:01.746-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.VXilFku6RhWqlcMMHWAT_Q'
-2026-01-25T09:49:01.766-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'user-service.rabbit-1695983081.springCloudBusInput.errors' has 1 subscriber(s).
-2026-01-25T09:49:01.768-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'user-service.rabbit-1695983081.springCloudBusInput.errors' has 0 subscriber(s).
-2026-01-25T09:49:01.839-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-01-25T09:49:01.840-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'user-service.errorChannel' has 0 subscriber(s).
-2026-01-25T09:49:01.843-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
-2026-01-25T09:49:01.865-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-01-25T09:49:01.872-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-01-25T09:49:01.875-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-01-25T09:49:01.876-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-01-25T09:49:04.878-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2026-01-25T09:49:04.889-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - deregister  status: 200
-2026-01-25T09:49:04.889-05:00  INFO 24108 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2026-01-25T09:49:12.794-05:00  INFO 21368 --- [user-service] [main] c.e.u.UserWorkspaceApplication           : Starting UserWorkspaceApplication using Java 25 with PID 21368 (C:\Users\chira\Desktop\JAVA\Microservices Projects\user-workspace\user-workspace\target\classes started by chira in C:\Users\chira\Desktop\JAVA\Microservices Projects\user-workspace)
-2026-01-25T09:49:12.812-05:00  INFO 21368 --- [user-service] [main] c.e.u.UserWorkspaceApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-01-25T09:49:12.953-05:00  INFO 21368 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
-2026-01-25T09:49:12.954-05:00  INFO 21368 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
-2026-01-25T09:49:18.833-05:00  INFO 21368 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-01-25T09:49:18.843-05:00  INFO 21368 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-01-25T09:49:19.047-05:00  INFO 21368 --- [user-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.ecommerce.user_workspace.repository.UserRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
-2026-01-25T09:49:19.052-05:00  INFO 21368 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 154 ms. Found 0 JPA repository interfaces.
-2026-01-25T09:49:19.306-05:00  INFO 21368 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-01-25T09:49:19.310-05:00  INFO 21368 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2026-01-25T09:49:20.037-05:00  INFO 21368 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 715 ms. Found 1 MongoDB repository interface.
-2026-01-25T09:49:21.943-05:00  INFO 21368 --- [user-service] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2026-01-25T09:49:21.968-05:00  INFO 21368 --- [user-service] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2026-01-25T09:49:22.096-05:00  INFO 21368 --- [user-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d539e5a0-8fb8-3446-94dd-c4d4adfe2c87
-2026-01-25T09:49:24.481-05:00  INFO 21368 --- [user-service] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
-2026-01-25T09:49:24.560-05:00  INFO 21368 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-01-25T09:49:24.562-05:00  INFO 21368 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-01-25T09:49:24.908-05:00  INFO 21368 --- [user-service] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 11944 ms
-2026-01-25T09:49:26.552-05:00  INFO 21368 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-01-25T09:49:26.957-05:00  INFO 21368 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:7f5f9a8f-da11-4929-93f6-f69a6c8068ec user=SA
-2026-01-25T09:49:26.962-05:00  INFO 21368 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-01-25T09:49:27.070-05:00  INFO 21368 --- [user-service] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-01-25T09:49:27.276-05:00  INFO 21368 --- [user-service] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.0.Final
-2026-01-25T09:49:29.832-05:00  INFO 21368 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-01-25T09:49:30.121-05:00  INFO 21368 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:h2:mem:7f5f9a8f-da11-4929-93f6-f69a6c8068ec]
-	Database driver: H2 JDBC Driver
-	Database dialect: H2Dialect
-	Database version: 2.4.240
-	Default catalog/schema: 7F5F9A8F-DA11-4929-93F6-F69A6C8068EC/PUBLIC
-	Autocommit mode: undefined/unknown
-	Isolation level: READ_COMMITTED [default READ_COMMITTED]
-	JDBC fetch size: 100
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-01-25T09:49:31.286-05:00  INFO 21368 --- [user-service] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-01-25T09:49:31.306-05:00  INFO 21368 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-01-25T09:49:32.208-05:00  INFO 21368 --- [user-service] [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.2"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/25+37-LTS-3491"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@4baf3987], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@158119bf, com.mongodb.Jep395RecordCodecProvider@69abff1d, com.mongodb.KotlinCodecProvider@7980eb2, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@4fdb338e], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
-2026-01-25T09:49:32.271-05:00  INFO 21368 --- [user-service] [cluster-ClusterId{value='69762d7b7c28c82f4b0ada7d', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=27, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=128845200, minRoundTripTimeNanos=0}
-2026-01-25T09:49:34.827-05:00  WARN 21368 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-01-25T09:49:36.285-05:00  INFO 21368 --- [user-service] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'user-service.springCloudBusInput' has 1 subscriber(s).
-2026-01-25T09:49:38.550-05:00  INFO 21368 --- [user-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
-2026-01-25T09:49:38.708-05:00  WARN 21368 --- [user-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-01-25T09:49:38.838-05:00  INFO 21368 --- [user-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 24 endpoints beneath base path '/actuator'
-2026-01-25T09:49:39.081-05:00  INFO 21368 --- [user-service] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-01-25T09:49:39.081-05:00  INFO 21368 --- [user-service] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'user-service.errorChannel' has 1 subscriber(s).
-2026-01-25T09:49:39.081-05:00  INFO 21368 --- [user-service] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
-2026-01-25T09:49:39.110-05:00  INFO 21368 --- [user-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-01-25T09:49:39.158-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-01-25T09:49:39.167-05:00  INFO 21368 --- [user-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-25T09:49:39.192-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-01-25T09:49:39.193-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-01-25T09:49:39.193-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-01-25T09:49:39.193-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-01-25T09:49:39.194-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-01-25T09:49:39.194-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-01-25T09:49:39.194-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-01-25T09:49:39.914-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-01-25T09:49:39.917-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-01-25T09:49:39.924-05:00  INFO 21368 --- [user-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-01-25T09:49:39.929-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1769352579928 with initial instances count: 0
-2026-01-25T09:49:39.937-05:00  INFO 21368 --- [user-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-SERVICE with eureka with status UP
-2026-01-25T09:49:39.939-05:00  INFO 21368 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1769352579939, current=UP, previous=STARTING]
-2026-01-25T09:49:39.944-05:00  INFO 21368 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082: registering service...
-2026-01-25T09:49:39.946-05:00  INFO 21368 --- [user-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
-2026-01-25T09:49:39.947-05:00  INFO 21368 --- [user-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
-2026-01-25T09:49:40.075-05:00  INFO 21368 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - registration status: 204
-2026-01-25T09:49:40.212-05:00  INFO 21368 --- [user-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
-2026-01-25T09:49:40.245-05:00  INFO 21368 --- [user-service] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.PzmOpn7mQ5WbCIRbXDX5YA, bound to: springCloudBus
-2026-01-25T09:49:40.260-05:00  INFO 21368 --- [user-service] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2026-01-25T09:49:40.526-05:00  INFO 21368 --- [user-service] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#2bed4ed:0/SimpleConnection@1c078351 [delegate=amqp://guest@127.0.0.1:5672/, localPort=55221]
-2026-01-25T09:49:40.767-05:00  INFO 21368 --- [user-service] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-551579003.springCloudBusInput.errors' has 1 subscriber(s).
-2026-01-25T09:49:40.772-05:00  INFO 21368 --- [user-service] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-551579003.springCloudBusInput.errors' has 2 subscriber(s).
-2026-01-25T09:49:40.848-05:00  INFO 21368 --- [user-service] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.PzmOpn7mQ5WbCIRbXDX5YA'
-2026-01-25T09:49:40.935-05:00  INFO 21368 --- [user-service] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
-2026-01-25T09:49:40.939-05:00  INFO 21368 --- [user-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2026-01-25T09:49:41.132-05:00  INFO 21368 --- [user-service] [main] c.e.u.UserWorkspaceApplication           : Started UserWorkspaceApplication in 32.22 seconds (process running for 34.12)
-2026-01-25T09:50:09.919-05:00  INFO 21368 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-01-25T09:50:09.920-05:00  INFO 21368 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-01-25T09:50:09.920-05:00  INFO 21368 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-01-25T09:50:09.920-05:00  INFO 21368 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-01-25T09:50:09.920-05:00  INFO 21368 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-01-25T09:50:09.920-05:00  INFO 21368 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2026-01-25T09:50:09.920-05:00  INFO 21368 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-01-25T09:50:09.946-05:00  INFO 21368 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-01-25T09:54:39.228-05:00  INFO 21368 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-25T09:59:39.299-05:00  INFO 21368 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-25T10:04:39.323-05:00  INFO 21368 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-25T10:09:39.337-05:00  INFO 21368 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-25T10:14:39.348-05:00  INFO 21368 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-25T10:19:39.368-05:00  INFO 21368 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-25T10:21:28.689-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USER-SERVICE with eureka with status DOWN
-2026-01-25T10:21:28.708-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1769354488708, current=DOWN, previous=UP]
-2026-01-25T10:21:28.712-05:00  INFO 21368 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082: registering service...
-2026-01-25T10:21:28.877-05:00  INFO 21368 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - registration status: 204
-2026-01-25T10:21:29.336-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-01-25T10:21:29.487-05:00  INFO 21368 --- [user-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-01-25T10:21:29.844-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
-2026-01-25T10:21:29.846-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
-2026-01-25T10:21:29.873-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.PzmOpn7mQ5WbCIRbXDX5YA'
-2026-01-25T10:21:30.611-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'user-service.rabbit-551579003.springCloudBusInput.errors' has 1 subscriber(s).
-2026-01-25T10:21:30.640-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'user-service.rabbit-551579003.springCloudBusInput.errors' has 0 subscriber(s).
-2026-01-25T10:21:31.819-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-01-25T10:21:31.819-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'user-service.errorChannel' has 0 subscriber(s).
-2026-01-25T10:21:31.822-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
-2026-01-25T10:21:31.961-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-01-25T10:21:32.057-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-01-25T10:21:32.070-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-01-25T10:21:32.084-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-01-25T10:21:35.089-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2026-01-25T10:21:35.237-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
-	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:763)
-	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:615)
-	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:567)
-	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:750)
-	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:896)
-	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toBodilessEntity(DefaultRestClient.java:860)
-	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.cancel(RestClientEurekaHttpClient.java:73)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:453)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:411)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:237)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:193)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:209)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:795)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:745)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1500)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:704)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1493)
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1225)
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1186)
-	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1132)
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
-	at java.base/java.net.Socket.connect(Socket.java:659)
-	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:215)
-	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
-	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:151)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
-	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequest(AbstractBufferingClientHttpRequest.java:89)
-	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
-	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
-	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
-	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
-	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:609)
-	... 39 more
+2026-01-26T00:35:58.512-05:00  INFO 4372 --- [user-service] [main] [                                                 ] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-26T00:35:58.609-05:00  INFO 4372 --- [user-service] [main] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-26T00:36:00.439-05:00  INFO 4372 --- [user-service] [main] [                                                 ] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.2"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/25+37-LTS-3491"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@6c758c74], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@27777afd, com.mongodb.Jep395RecordCodecProvider@22e7ec5f, com.mongodb.KotlinCodecProvider@7335aae5, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@2df019b8], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-01-26T00:36:00.602-05:00  INFO 4372 --- [user-service] [cluster-ClusterId{value='6976fd3fca29fb1a4aded756', description='null'}-localhost:27017] [                                                 ] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=27, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=187451200, minRoundTripTimeNanos=0}
+2026-01-26T00:36:06.883-05:00  WARN 4372 --- [user-service] [main] [                                                 ] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-26T00:36:09.677-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'user-service.springCloudBusInput' has 1 subscriber(s).
+2026-01-26T00:36:13.529-05:00  INFO 4372 --- [user-service] [main] [                                                 ] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2026-01-26T00:36:13.848-05:00  WARN 4372 --- [user-service] [main] [                                                 ] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-01-26T00:36:13.916-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 25 endpoints beneath base path '/actuator'
+2026-01-26T00:36:14.617-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-01-26T00:36:14.618-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.i.channel.PublishSubscribeChannel    : Channel 'user-service.errorChannel' has 1 subscriber(s).
+2026-01-26T00:36:14.618-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2026-01-26T00:36:14.704-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-01-26T00:36:14.817-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-01-26T00:36:14.828-05:00  INFO 4372 --- [user-service] [main] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T00:36:14.870-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-01-26T00:36:14.871-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-01-26T00:36:14.871-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-01-26T00:36:14.871-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-01-26T00:36:14.872-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-01-26T00:36:14.872-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-01-26T00:36:14.872-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-01-26T00:36:17.560-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-01-26T00:36:17.567-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-01-26T00:36:17.575-05:00  INFO 4372 --- [user-service] [main] [                                                 ] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-01-26T00:36:17.583-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1769405777579 with initial instances count: 0
+2026-01-26T00:36:17.597-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-SERVICE with eureka with status UP
+2026-01-26T00:36:17.601-05:00  INFO 4372 --- [user-service] [main] [                                                 ] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1769405777601, current=UP, previous=STARTING]
+2026-01-26T00:36:17.610-05:00  INFO 4372 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082: registering service...
+2026-01-26T00:36:17.618-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
+2026-01-26T00:36:17.619-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
+2026-01-26T00:36:18.411-05:00  INFO 4372 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - registration status: 204
+2026-01-26T00:36:18.465-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
+2026-01-26T00:36:18.545-05:00  INFO 4372 --- [user-service] [main] [                                                 ] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg, bound to: springCloudBus
+2026-01-26T00:36:18.569-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-01-26T00:36:19.148-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#5b9ec0:0/SimpleConnection@750a4fc1 [delegate=amqp://guest@127.0.0.1:5672/, localPort=62082]
+2026-01-26T00:36:19.877-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-197774631.springCloudBusInput.errors' has 1 subscriber(s).
+2026-01-26T00:36:19.894-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-197774631.springCloudBusInput.errors' has 2 subscriber(s).
+2026-01-26T00:36:20.097-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg'
+2026-01-26T00:36:20.237-05:00  INFO 4372 --- [user-service] [main] [                                                 ] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-01-26T00:36:20.246-05:00  INFO 4372 --- [user-service] [main] [                                                 ] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2026-01-26T00:36:21.105-05:00  INFO 4372 --- [user-service] [main] [                                                 ] c.e.u.UserWorkspaceApplication           : Started UserWorkspaceApplication in 72.999 seconds (process running for 75.275)
+2026-01-26T00:36:23.486-05:00  INFO 4372 --- [user-service] [http-nio-8082-exec-7] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-26T00:36:23.488-05:00  INFO 4372 --- [user-service] [http-nio-8082-exec-7] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-26T00:36:23.516-05:00  INFO 4372 --- [user-service] [http-nio-8082-exec-7] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
+2026-01-26T00:36:28.654-05:00  WARN 4372 --- [user-service] [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2026-01-26T00:36:28.657-05:00  WARN 4372 --- [user-service] [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] [                                                 ] z.r.i.AsyncReporter$BoundedAsyncReporter : Dropped 2 spans due to HttpTimeoutException(request timed out)
 
-2026-01-25T10:21:35.242-05:00  WARN 21368 --- [user-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
-2026-01-25T10:21:35.383-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
-	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:763)
-	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:615)
-	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:567)
-	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:750)
-	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:896)
-	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toBodilessEntity(DefaultRestClient.java:860)
-	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.cancel(RestClientEurekaHttpClient.java:73)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:453)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:411)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:237)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:193)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:209)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:795)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:745)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1500)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:704)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1493)
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1225)
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1186)
-	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1132)
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
-	at java.base/java.lang.Thread.run(Thread.java:1474)
-Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
-	at java.base/java.net.Socket.connect(Socket.java:659)
-	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:215)
-	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
-	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:151)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
-	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequest(AbstractBufferingClientHttpRequest.java:89)
-	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
-	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
-	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
-	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
-	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:609)
-	... 40 more
-
-2026-01-25T10:21:35.385-05:00  WARN 21368 --- [user-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
-2026-01-25T10:21:35.388-05:00 ERROR 21368 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - de-registration failedCannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900) ~[eureka-client-2.0.5.jar:2.0.5]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:453) ~[spring-beans-7.0.2.jar:7.0.2]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:411) ~[spring-beans-7.0.2.jar:7.0.2]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:237) ~[spring-beans-7.0.2.jar:7.0.2]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200) ~[spring-beans-7.0.2.jar:7.0.2]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:193) ~[spring-beans-7.0.2.jar:7.0.2]
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387) ~[spring-cloud-context-5.0.0.jar:5.0.0]
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134) ~[spring-cloud-context-5.0.0.jar:5.0.0]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:209) ~[spring-beans-7.0.2.jar:7.0.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:795) ~[spring-beans-7.0.2.jar:7.0.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:745) ~[spring-beans-7.0.2.jar:7.0.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1500) ~[spring-beans-7.0.2.jar:7.0.2]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:704) ~[spring-beans-7.0.2.jar:7.0.2]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1493) ~[spring-beans-7.0.2.jar:7.0.2]
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1225) ~[spring-context-7.0.2.jar:7.0.2]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1186) ~[spring-context-7.0.2.jar:7.0.2]
-	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1132) ~[spring-context-7.0.2.jar:7.0.2]
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147) ~[spring-boot-4.0.1.jar:4.0.1]
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116) ~[spring-boot-4.0.1.jar:4.0.1]
+java.net.http.HttpTimeoutException: request timed out
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:921) ~[java.net.http:na]
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133) ~[java.net.http:na]
+	at org.springframework.boot.zipkin.autoconfigure.ZipkinHttpClientSender.postSpans(ZipkinHttpClientSender.java:59) ~[spring-boot-zipkin-4.0.1.jar:4.0.1]
+	at org.springframework.boot.zipkin.autoconfigure.HttpSender.postSpans(HttpSender.java:69) ~[spring-boot-zipkin-4.0.1.jar:4.0.1]
+	at org.springframework.boot.zipkin.autoconfigure.HttpSender.postSpans(HttpSender.java:41) ~[spring-boot-zipkin-4.0.1.jar:4.0.1]
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123) ~[zipkin-reporter-3.5.1.jar:na]
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266) ~[zipkin-reporter-3.5.1.jar:na]
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352) ~[zipkin-reporter-3.5.1.jar:na]
 	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
 
-2026-01-25T10:21:35.469-05:00  INFO 21368 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2026-01-25T19:52:26.281-05:00  INFO 15740 --- [user-service] [main] c.e.u.UserWorkspaceApplication           : Starting UserWorkspaceApplication using Java 25 with PID 15740 (C:\Users\chira\Desktop\JAVA\Microservices Projects\user-workspace\user-workspace\target\classes started by chira in C:\Users\chira\Desktop\JAVA\Microservices Projects\user-workspace)
-2026-01-25T19:52:26.301-05:00  INFO 15740 --- [user-service] [main] c.e.u.UserWorkspaceApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-01-25T19:52:26.481-05:00  INFO 15740 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
-2026-01-25T19:52:26.482-05:00  INFO 15740 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
-2026-01-25T19:52:32.584-05:00  INFO 15740 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-01-25T19:52:32.598-05:00  INFO 15740 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-01-25T19:52:32.771-05:00  INFO 15740 --- [user-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.ecommerce.user_workspace.repository.UserRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
-2026-01-25T19:52:32.773-05:00  INFO 15740 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 0 JPA repository interfaces.
-2026-01-25T19:52:32.927-05:00  INFO 15740 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-01-25T19:52:32.928-05:00  INFO 15740 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2026-01-25T19:52:33.470-05:00  INFO 15740 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 536 ms. Found 1 MongoDB repository interface.
-2026-01-25T19:52:35.009-05:00  INFO 15740 --- [user-service] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2026-01-25T19:52:35.021-05:00  INFO 15740 --- [user-service] [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2026-01-25T19:52:35.083-05:00  INFO 15740 --- [user-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d539e5a0-8fb8-3446-94dd-c4d4adfe2c87
-2026-01-25T19:52:36.410-05:00  INFO 15740 --- [user-service] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
-2026-01-25T19:52:36.457-05:00  INFO 15740 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-01-25T19:52:36.459-05:00  INFO 15740 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-01-25T19:52:36.702-05:00  INFO 15740 --- [user-service] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 10210 ms
-2026-01-25T19:52:38.040-05:00  INFO 15740 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-01-25T19:52:38.513-05:00  INFO 15740 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:0a5754cd-2899-414a-9a63-eebcff2a5c75 user=SA
-2026-01-25T19:52:38.517-05:00  INFO 15740 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-01-25T19:52:38.613-05:00  INFO 15740 --- [user-service] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-01-25T19:52:38.715-05:00  INFO 15740 --- [user-service] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.0.Final
-2026-01-25T19:52:39.905-05:00  INFO 15740 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-01-25T19:52:40.099-05:00  INFO 15740 --- [user-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:h2:mem:0a5754cd-2899-414a-9a63-eebcff2a5c75]
-	Database driver: H2 JDBC Driver
-	Database dialect: H2Dialect
-	Database version: 2.4.240
-	Default catalog/schema: 0A5754CD-2899-414A-9A63-EEBCFF2A5C75/PUBLIC
-	Autocommit mode: undefined/unknown
-	Isolation level: READ_COMMITTED [default READ_COMMITTED]
-	JDBC fetch size: 100
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-01-25T19:52:41.256-05:00  INFO 15740 --- [user-service] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-01-25T19:52:41.285-05:00  INFO 15740 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-01-25T19:52:42.220-05:00  INFO 15740 --- [user-service] [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.2"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/25+37-LTS-3491"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@6fe47be], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@3eff5c32, com.mongodb.Jep395RecordCodecProvider@79d538c1, com.mongodb.KotlinCodecProvider@31e08c61, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@2de22e7], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
-2026-01-25T19:52:42.347-05:00  INFO 15740 --- [user-service] [cluster-ClusterId{value='6976bad9709deba8a465619b', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=27, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=155153100, minRoundTripTimeNanos=0}
-2026-01-25T19:52:44.102-05:00  WARN 15740 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-01-25T19:52:45.450-05:00  INFO 15740 --- [user-service] [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'user-service.springCloudBusInput' has 1 subscriber(s).
-2026-01-25T19:52:47.456-05:00  INFO 15740 --- [user-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
-2026-01-25T19:52:47.571-05:00  WARN 15740 --- [user-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-01-25T19:52:47.585-05:00  INFO 15740 --- [user-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 24 endpoints beneath base path '/actuator'
-2026-01-25T19:52:47.850-05:00  INFO 15740 --- [user-service] [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-01-25T19:52:47.851-05:00  INFO 15740 --- [user-service] [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'user-service.errorChannel' has 1 subscriber(s).
-2026-01-25T19:52:47.853-05:00  INFO 15740 --- [user-service] [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
-2026-01-25T19:52:47.909-05:00  INFO 15740 --- [user-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-01-25T19:52:47.979-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-01-25T19:52:47.986-05:00  INFO 15740 --- [user-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-25T19:52:48.007-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-01-25T19:52:48.008-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-01-25T19:52:48.008-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-01-25T19:52:48.009-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-01-25T19:52:48.011-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-01-25T19:52:48.012-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-01-25T19:52:48.012-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-01-25T19:52:50.894-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-01-25T19:52:50.901-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-01-25T19:52:50.911-05:00  INFO 15740 --- [user-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-01-25T19:52:50.917-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1769388770915 with initial instances count: 0
-2026-01-25T19:52:50.934-05:00  INFO 15740 --- [user-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-SERVICE with eureka with status UP
-2026-01-25T19:52:50.940-05:00  INFO 15740 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1769388770939, current=UP, previous=STARTING]
-2026-01-25T19:52:50.948-05:00  INFO 15740 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082: registering service...
-2026-01-25T19:52:50.953-05:00  INFO 15740 --- [user-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: rabbit
-2026-01-25T19:52:50.954-05:00  INFO 15740 --- [user-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for rabbit
-2026-01-25T19:52:51.422-05:00  INFO 15740 --- [user-service] [main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: rabbit
-2026-01-25T19:52:51.468-05:00  INFO 15740 --- [user-service] [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.19Uq0DqKTuWxq8VmE5wlRw, bound to: springCloudBus
-2026-01-25T19:52:51.490-05:00  INFO 15740 --- [user-service] [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
-2026-01-25T19:52:51.559-05:00  INFO 15740 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - registration status: 204
-2026-01-25T19:52:51.708-05:00  INFO 15740 --- [user-service] [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#6c743da:0/SimpleConnection@758836f6 [delegate=amqp://guest@127.0.0.1:5672/, localPort=56293]
-2026-01-25T19:52:52.153-05:00  INFO 15740 --- [user-service] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1969764280.springCloudBusInput.errors' has 1 subscriber(s).
-2026-01-25T19:52:52.158-05:00  INFO 15740 --- [user-service] [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'rabbit-1969764280.springCloudBusInput.errors' has 2 subscriber(s).
-2026-01-25T19:52:52.390-05:00  INFO 15740 --- [user-service] [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.19Uq0DqKTuWxq8VmE5wlRw'
-2026-01-25T19:52:52.507-05:00  INFO 15740 --- [user-service] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
-2026-01-25T19:52:52.512-05:00  INFO 15740 --- [user-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2026-01-25T19:52:52.747-05:00  INFO 15740 --- [user-service] [main] c.e.u.UserWorkspaceApplication           : Started UserWorkspaceApplication in 29.33 seconds (process running for 31.711)
-2026-01-25T19:53:20.902-05:00  INFO 15740 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-01-25T19:53:20.903-05:00  INFO 15740 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-01-25T19:53:20.903-05:00  INFO 15740 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-01-25T19:53:20.903-05:00  INFO 15740 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-01-25T19:53:20.903-05:00  INFO 15740 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-01-25T19:53:20.903-05:00  INFO 15740 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2026-01-25T19:53:20.903-05:00  INFO 15740 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-01-25T19:53:20.941-05:00  INFO 15740 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-01-25T19:57:48.016-05:00  INFO 15740 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-25T20:02:48.031-05:00  INFO 15740 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-25T20:03:32.128-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USER-SERVICE with eureka with status DOWN
-2026-01-25T20:03:32.142-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1769389412142, current=DOWN, previous=UP]
-2026-01-25T20:03:32.150-05:00  INFO 15740 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082: registering service...
-2026-01-25T20:03:33.097-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-01-25T20:03:33.156-05:00  INFO 15740 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/USER-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/USER-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-01-26T00:36:47.570-05:00  INFO 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-01-26T00:36:47.571-05:00  INFO 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-01-26T00:36:47.572-05:00  INFO 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-01-26T00:36:47.572-05:00  INFO 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-01-26T00:36:47.572-05:00  INFO 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-01-26T00:36:47.573-05:00  INFO 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2026-01-26T00:36:47.573-05:00  INFO 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-01-26T00:36:47.679-05:00  INFO 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-01-26T00:41:14.892-05:00  INFO 4372 --- [user-service] [AsyncResolver-bootstrap-executor-%d] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T00:42:34.571-05:00  INFO 4372 --- [user-service] [http-nio-8082-exec-10] [6976fec997753459d009bb72ccdd708a-d009bb72ccdd708a] c.e.u.controller.UserController          : Request received for User: 696871fe2397ae1089921bfe 
+2026-01-26T00:44:30.344-05:00  INFO 4372 --- [user-service] [http-nio-8082-exec-7] [6976ff3e83efe92de171e98d91f45195-e171e98d91f45195] c.e.u.controller.UserController          : Request received for User: 696871fe2397ae1089921bfe 
+2026-01-26T00:46:14.990-05:00  INFO 4372 --- [user-service] [AsyncResolver-bootstrap-executor-%d] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T00:51:15.049-05:00  INFO 4372 --- [user-service] [AsyncResolver-bootstrap-executor-%d] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T00:56:15.125-05:00  INFO 4372 --- [user-service] [AsyncResolver-bootstrap-executor-%d] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T01:01:15.216-05:00  INFO 4372 --- [user-service] [AsyncResolver-bootstrap-executor-%d] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T01:02:58.495-05:00  INFO 4372 --- [user-service] [http-nio-8082-exec-1] [6977038d75eceb9423c02999ade5029d-8d9d8b8a11964585] c.e.u.controller.UserController          : Request received for User: 696871fe2397ae1089921bfe 
+2026-01-26T01:03:45.643-05:00  INFO 4372 --- [user-service] [http-nio-8082-exec-10] [697703c11846e021feaff50bb816e43b-95a8062ac94e3a52] c.e.u.controller.UserController          : Request received for User: 696871fe2397ae1089921bfe 
+2026-01-26T01:06:15.246-05:00  INFO 4372 --- [user-service] [AsyncResolver-bootstrap-executor-%d] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T01:11:15.287-05:00  INFO 4372 --- [user-service] [AsyncResolver-bootstrap-executor-%d] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T01:16:15.430-05:00  INFO 4372 --- [user-service] [AsyncResolver-bootstrap-executor-%d] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T01:19:39.770-05:00  INFO 4372 --- [user-service] [http-nio-8082-exec-10] [69770779035d4252afd27432c2067b1d-12958f02c764896b] c.e.u.controller.UserController          : Request received for User: 696871fe2397ae1089921bfe 
+2026-01-26T01:21:15.850-05:00  INFO 4372 --- [user-service] [AsyncResolver-bootstrap-executor-%d] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-26T01:22:30.185-05:00  WARN 4372 --- [user-service] [springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg-1] [                                                 ] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it
+
+com.rabbitmq.client.ShutdownSignalException: connection error; protocol method: #method<connection.close>(reply-code=320, reply-text=CONNECTION_FORCED - broker forced connection closure with reason 'shutdown', class-id=0, method-id=0)
+	at com.rabbitmq.client.impl.AMQConnection.startShutdown(AMQConnection.java:1014) ~[amqp-client-5.27.1.jar:5.27.1]
+	at com.rabbitmq.client.impl.AMQConnection.shutdown(AMQConnection.java:1004) ~[amqp-client-5.27.1.jar:5.27.1]
+	at com.rabbitmq.client.impl.AMQConnection.handleConnectionClose(AMQConnection.java:942) ~[amqp-client-5.27.1.jar:5.27.1]
+	at com.rabbitmq.client.impl.AMQConnection.processControlCommand(AMQConnection.java:897) ~[amqp-client-5.27.1.jar:5.27.1]
+	at com.rabbitmq.client.impl.AMQConnection$1.processAsync(AMQConnection.java:276) ~[amqp-client-5.27.1.jar:5.27.1]
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:193) ~[amqp-client-5.27.1.jar:5.27.1]
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:125) ~[amqp-client-5.27.1.jar:5.27.1]
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:748) ~[amqp-client-5.27.1.jar:5.27.1]
+	at com.rabbitmq.client.impl.AMQConnection.access$400(AMQConnection.java:49) ~[amqp-client-5.27.1.jar:5.27.1]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:695) ~[amqp-client-5.27.1.jar:5.27.1]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-01-26T01:22:30.645-05:00  INFO 4372 --- [user-service] [springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg-1] [                                                 ] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@697607a5: tags=[[amq.ctag-57i_Mw63NIs1hDcnBoQFcA]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@31b9a628 Shared Rabbit Connection: SimpleConnection@750a4fc1 [delegate=amqp://guest@127.0.0.1:5672/, localPort=62082], acknowledgeMode=AUTO local queue size=0
+2026-01-26T01:22:30.857-05:00  INFO 4372 --- [user-service] [springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg-2] [                                                 ] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-01-26T01:22:37.036-05:00  WARN 4372 --- [user-service] [springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg-2] [                                                 ] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: getsockopt
+2026-01-26T01:22:37.039-05:00  INFO 4372 --- [user-service] [springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg-2] [                                                 ] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@2235b0ab: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-01-26T01:22:37.046-05:00  INFO 4372 --- [user-service] [springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg-3] [                                                 ] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-01-26T01:22:42.064-05:00  WARN 4372 --- [user-service] [springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg-3] [                                                 ] o.s.a.r.l.SimpleMessageListenerContainer : Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: getsockopt
+2026-01-26T01:22:42.065-05:00  INFO 4372 --- [user-service] [springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg-3] [                                                 ] o.s.a.r.l.SimpleMessageListenerContainer : Restarting Consumer@512d9f1b: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2026-01-26T01:22:42.066-05:00  INFO 4372 --- [user-service] [springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg-4] [                                                 ] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2026-01-26T01:22:42.702-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USER-SERVICE with eureka with status DOWN
+2026-01-26T01:22:42.711-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1769408562710, current=DOWN, previous=UP]
+2026-01-26T01:22:42.716-05:00  INFO 4372 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082: registering service...
+2026-01-26T01:22:42.993-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T01:22:43.057-05:00  INFO 4372 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - registration status: 204
+2026-01-26T01:22:43.130-05:00  INFO 4372 --- [user-service] [tomcat-shutdown] [                                                 ] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T01:22:43.258-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2026-01-26T01:22:43.260-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2026-01-26T01:22:43.279-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.GnSsGytoS8-oLoKk8lFXOg'
+2026-01-26T01:22:43.368-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] o.s.c.stream.binder.BinderErrorChannel   : Channel 'user-service.rabbit-197774631.springCloudBusInput.errors' has 1 subscriber(s).
+2026-01-26T01:22:43.391-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] o.s.c.stream.binder.BinderErrorChannel   : Channel 'user-service.rabbit-197774631.springCloudBusInput.errors' has 0 subscriber(s).
+2026-01-26T01:22:44.436-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-01-26T01:22:44.437-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] o.s.i.channel.PublishSubscribeChannel    : Channel 'user-service.errorChannel' has 0 subscriber(s).
+2026-01-26T01:22:44.445-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2026-01-26T01:22:44.788-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-26T01:22:44.910-05:00  INFO 4372 --- [user-service] [DiscoveryClient-HeartbeatExecutor-%d] [69770834630656db510ef4e8be30e99a-510ef4e8be30e99a] o.a.h.c.h.i.c.HttpRequestRetryExec       : ex-0000000186 recoverable I/O exception (java.net.SocketException) caught when sending request to http://localhost:8761;request will be automatically re-executed in 0 MILLISECONDS (exec count 2)
+2026-01-26T01:22:44.947-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-26T01:22:44.963-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-26T01:22:45.045-05:00  INFO 4372 --- [user-service] [DiscoveryClient-HeartbeatExecutor-%d] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:763)
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:615)
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:567)
 	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:750)
 	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:896)
-	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toBodilessEntity(DefaultRestClient.java:860)
-	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.register(RestClientEurekaHttpClient.java:64)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:842)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:831)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.sendHeartBeat(RestClientEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
-	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1403)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:215)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:151)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequest(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:609)
+	... 22 more
+
+2026-01-26T01:22:45.050-05:00  WARN 4372 --- [user-service] [DiscoveryClient-HeartbeatExecutor-%d] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-01-26T01:22:45.273-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-01-26T01:22:45.330-05:00  INFO 4372 --- [user-service] [DiscoveryClient-HeartbeatExecutor-%d] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on PUT request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:763)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:615)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:567)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:750)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:896)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:842)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:831)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.sendHeartBeat(RestClientEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1403)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
@@ -562,33 +312,48 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http:
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:609)
 	... 23 more
 
-2026-01-25T20:03:33.161-05:00  WARN 15740 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/USER-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
-2026-01-25T20:03:33.210-05:00  INFO 15740 --- [user-service] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-01-25T20:03:33.343-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
-2026-01-25T20:03:33.530-05:00  INFO 15740 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/USER-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/USER-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-01-26T01:22:45.332-05:00  WARN 4372 --- [user-service] [DiscoveryClient-HeartbeatExecutor-%d] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-01-26T01:22:45.336-05:00 ERROR 4372 --- [user-service] [DiscoveryClient-HeartbeatExecutor-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - was unable to send heartbeat!
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:845) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1403) ~[eureka-client-2.0.5.jar:2.0.5]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-01-26T01:22:45.956-05:00  INFO 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:763)
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:615)
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:567)
 	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:750)
 	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:896)
-	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toBodilessEntity(DefaultRestClient.java:860)
-	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.register(RestClientEurekaHttpClient.java:64)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:842)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:831)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getApplicationsInternal(RestClientEurekaHttpClient.java:201)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getDelta(RestClientEurekaHttpClient.java:142)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
-	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1474)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
@@ -628,58 +393,95 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http:
 	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:609)
-	... 24 more
+	... 25 more
 
-2026-01-25T20:03:33.532-05:00  WARN 15740 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/USER-SERVICE": Connect to http://localhost:8761 failed: Connection refused: getsockopt
-2026-01-25T20:03:33.534-05:00  WARN 15740 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - registration failed Cannot execute request on any known server
+2026-01-26T01:22:45.958-05:00  WARN 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-01-26T01:22:45.972-05:00  INFO 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:763)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:615)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:567)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:750)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:896)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:842)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:831)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getApplicationsInternal(RestClientEurekaHttpClient.java:201)
+	at org.springframework.cloud.netflix.eureka.http.RestClientEurekaHttpClient.getDelta(RestClientEurekaHttpClient.java:142)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1474)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:639)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:543)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:215)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:151)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:87)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeWithRequest(AbstractBufferingClientHttpRequest.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest$EndOfChainRequestExecution.execute(InterceptingClientHttpRequest.java:102)
+	at org.springframework.cloud.netflix.eureka.http.RestClientTransportClientFactory.lambda$newClient$2(RestClientTransportClientFactory.java:98)
+	at org.springframework.http.client.ClientHttpRequestInterceptor.lambda$apply$0(ClientHttpRequestInterceptor.java:89)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:73)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:50)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:80)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:609)
+	... 26 more
 
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105) ~[eureka-client-2.0.5.jar:2.0.5]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+2026-01-26T01:22:45.973-05:00  WARN 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://localhost:8761/eureka/apps/delta": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-01-26T01:22:45.975-05:00  INFO 4372 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] [                                                 ] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1080)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:963)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1474)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
 
-2026-01-25T20:03:33.606-05:00  WARN 15740 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125) ~[eureka-client-2.0.5.jar:2.0.5]
-	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105) ~[eureka-client-2.0.5.jar:2.0.5]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:309) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
-
-2026-01-25T20:03:33.915-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
-2026-01-25T20:03:33.922-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.19Uq0DqKTuWxq8VmE5wlRw'
-2026-01-25T20:03:34.087-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'user-service.rabbit-1969764280.springCloudBusInput.errors' has 1 subscriber(s).
-2026-01-25T20:03:34.101-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'user-service.rabbit-1969764280.springCloudBusInput.errors' has 0 subscriber(s).
-2026-01-25T20:03:34.788-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-01-25T20:03:34.789-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'user-service.errorChannel' has 0 subscriber(s).
-2026-01-25T20:03:34.791-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
-2026-01-25T20:03:34.929-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-01-25T20:03:34.980-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-01-25T20:03:35.000-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-01-25T20:03:35.007-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-01-25T20:03:38.010-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2026-01-25T20:03:38.069-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-01-26T01:22:48.277-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-01-26T01:22:48.360-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:763)
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:615)
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:567)
@@ -760,8 +562,8 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http:
 	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:609)
 	... 40 more
 
-2026-01-25T20:03:38.070-05:00  WARN 15740 --- [user-service] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
-2026-01-25T20:03:38.071-05:00 ERROR 15740 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - de-registration failedCannot execute request on any known server
+2026-01-26T01:22:48.361-05:00  WARN 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/USER-SERVICE/Chirayupatel.mshome.net:user-service:8082": Connect to http://localhost:8761 failed: Connection refused: getsockopt
+2026-01-26T01:22:48.361-05:00 ERROR 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/Chirayupatel.mshome.net:user-service:8082 - de-registration failedCannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.5.jar:2.0.5]
@@ -795,4 +597,4 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116) ~[spring-boot-4.0.1.jar:4.0.1]
 	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
 
-2026-01-25T20:03:38.079-05:00  INFO 15740 --- [user-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-01-26T01:22:48.370-05:00  INFO 4372 --- [user-service] [SpringApplicationShutdownHook] [                                                 ] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
