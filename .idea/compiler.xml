@@ -3,6 +3,14 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ConfigServers" />
+        <module name="eureka" />
+        <module name="gateway" />
+      </profile>
       <profile name="Annotation profile for product" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -15,14 +23,7 @@
         <module name="product" />
         <module name="ecom-application" />
       </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="ConfigServers" />
-        <module name="eureka" />
-      </profile>
-      <profile name="Annotation profile for order" enabled="true">
+      <profile name="Annotation profile for user-workspace" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -39,6 +40,7 @@
       <module name="ConfigServers" options="-parameters" />
       <module name="ecom-application" options="-parameters" />
       <module name="eureka" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="product" options="-parameters" />
       <module name="user-workspace" options="-parameters" />
