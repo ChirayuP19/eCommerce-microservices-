@@ -4,8 +4,8 @@ server:
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5433/product
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
+    username: chirayu #${DB_USER}
+    password: chirayu  #${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   rabbitmq:
     host: localhost
