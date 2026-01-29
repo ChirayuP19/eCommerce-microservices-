@@ -13,12 +13,17 @@ public class GatewayConfig {
         return builder.routes()
                 .route("product-service",
                         x->x.path("/api/v1/products/**")
+//                                .filters(a->a.rewritePath("/products(?<segment>/?.*)"
+//                                        ,"/api/v1/product${segment}"))
                                 .uri("http://localhost:8081"))
                 .route("user-service",x->x.path("/api/v1/users/**")
+//                        .filters(s->s.rewritePath("/users(?<segment>/?.*)","/api/v1/users${segment}"))
                                 .uri("http://localhost:8082"))
                 .route("order-services",a->a.path("/api/v1/orders/**")
+//                        .filters(c->c.rewritePath("/orders(?<segment>/?.*)","/api/v1/orders${segment}"))
                                 .uri("http://localhost:8083"))
-                .route("order-services",a->a.path("/api/v1/cart/**")
+                .route("order-services",b->b.path("/api/v1/cart/**")
+//                        .filters(s->s.rewritePath("/cart(?<segment>/?.*)","/api/v1/cart${segment}"))
                         .uri("http://localhost:8083"))
                 .route("eureka-server",a->a.path("/eureka/main")
                         .filters(f->f.rewritePath("/eureka/main","/"))
